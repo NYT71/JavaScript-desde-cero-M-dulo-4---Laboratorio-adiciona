@@ -1,0 +1,45 @@
+/*
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylo.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="xd">
+        <label >Nombre<input id="nombreF" type="text"></label>
+        <label >Apellido<input id="apellidoF" type="text"></label>
+        <label >Edad<input id="edadF" type="number"></label>
+        <button onclick="ejercicio2 ()">agregar</button>
+    </div>
+    <table id="tabla"></table>
+</body>
+<script src="script.js"></script>
+</html>
+*/   HTML
+
+var tabla = "<tr><th>Nombre</th><th>Apellido</th><th>Edad</th></tr>";
+
+function ejercicio2 (){
+    var nombre_ingreso = document.getElementById("nombreF").value;
+    var apellido_ingreso = document.getElementById("apellidoF").value;
+    var edad_ingreso = document.getElementById("edadF").value;
+
+    var personas = [];
+
+    personas.push({nombre : nombre_ingreso, apellido : apellido_ingreso, edad : edad_ingreso});
+
+    document.getElementById("nombreF").value = "";
+    document.getElementById("nombreF").value = "";
+    document.getElementById("nombreF").value = "";
+
+
+    for(i = 0; i < personas.length; i++){
+        tabla += "<tr><td>" + personas[i].nombre + "</td><td>" + personas[i].apellido + "</td><td>" + personas[i].edad + "</td></tr>";
+    }
+
+    document.getElementById("tabla").innerHTML = tabla;
+}
